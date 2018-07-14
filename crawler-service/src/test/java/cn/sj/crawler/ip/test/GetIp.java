@@ -65,9 +65,11 @@ public class GetIp extends GenericGenerator{
 				d=Jsoup.connect(url).userAgent(useragent).timeout(5*1000).get();
 			}catch (Exception e) {
 			}
+			System.out.println(ip.getId());
 			if(d==null)
 			{
 				this.ipManager.delete(ip.getId());
+				System.err.println(ip.getId());
 			}
 		}
 		
